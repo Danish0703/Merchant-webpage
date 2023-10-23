@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Merchant Web Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Merchant Page</h1>
+    <h2>Products</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> - ${{ product.price }}
+                <button onclick="addToCart({{ product.id }})">Add to Cart</button>
+            </li>
+        {% endfor %}
+    </ul>
+    <div id="cart">
+        <!-- Cart contents will be displayed here -->
+    </div>
+
+    <script>
+        function addToCart(productId) {
+            // You can implement cart functionality here using JavaScript
+        }
+    </script>
+</body>
+</html>
